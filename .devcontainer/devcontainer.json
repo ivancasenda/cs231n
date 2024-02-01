@@ -1,0 +1,20 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "visualstudioexptteam.vscodeintellicode", 
+                "ms-toolsai.jupyter", 
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    },
+    "runArgs": ["--runtime=nvidia", "-it", "--rm"],
+    "forwardPorts": [8888],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/cs231n,type=bind,consistency=delegated",
+	// "mounts": ["source=${localWorkspaceFolder}/../datasets/keras,target=/root/.keras,type=bind,consistency=delegated"],
+    "workspaceFolder": "/cs231n"
+  }
